@@ -90,8 +90,6 @@ quotes = [
 ]
 
 def home(request):
-    
-    
     current_time = datetime.now().strftime("%Y")
     random_quote = random.choice(quotes)
     context = {
