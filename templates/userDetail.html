@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        /* General Page Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        /* User Details Section */
+        .user-details {
+            width: 50%;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .user-details h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .details-table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+
+        .details-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        .details-table td:first-child {
+            font-weight: bold;
+            color: #555;
+            width: 30%;
+        }
+
+        .details-table td:last-child {
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .user-details {
+                width: 90%;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .user-details h2 {
+                font-size: 1.6rem;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>User Details Page</h1>
+    </header>
+
+    <div class="user-details">
+        <h2>User Information</h2>
+        
+        <table class="details-table">
+            {% for user in users %}
+            <tr>
+                <td>Name:</td>
+                <td>{{user.name}}</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>{{user.email}}</td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 User Details. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
